@@ -7,7 +7,7 @@ public class SliderController : MonoBehaviour {
 
 	private bool wallColliding;
 
-	public float velocity ;
+	public float velocity;
 
 	public LayerMask wallLayer;
 

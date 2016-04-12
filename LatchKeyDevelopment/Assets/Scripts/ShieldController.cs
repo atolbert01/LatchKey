@@ -42,14 +42,15 @@ public class ShieldController : MonoBehaviour
 			} else if (col.gameObject.tag == "Hazard") {
 				Kill ();
 			}
-		}
+            
+        }
 	}
 
 	void OnTriggerEnter2D(Collider2D col){
 		if (col.gameObject.tag == "Hazard") {
 			Kill ();
-		}
-	}
+		}     
+    }
 		
 	// Destroys the shield projectile and resets the player shield capabilities.
 	public void Kill(){

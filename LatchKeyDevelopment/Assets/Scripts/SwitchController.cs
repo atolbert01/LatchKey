@@ -9,6 +9,9 @@ public class SwitchController : MonoBehaviour {
 
 	public bool isActive;
 
+    private static int switchCount;    //current active switches
+    private static int numSwitch;      //total switches to be activated
+
 	GameObject rift;
 
 	RiftController riftController;
@@ -18,21 +21,28 @@ public class SwitchController : MonoBehaviour {
 		switchAnim = GetComponent<Animator> ();
 		rift = GameObject.Find ("Rift");
 		riftController = rift.GetComponent<RiftController> ();
-	
-	}
+        switchCount = 0;
+        numSwitch = GameObject.FindGameObjectsWithTag("Switch").Length;
+    }
 	
 	// Update is called once per frame
 	void Update () {
 		if (isActive) {
 			switchAnim.SetBool ("isActive", true);
-			riftController.SetActive ();
 		}
-	
-	}
+        if (switchCount == numSwitch)
+        {
+            riftController.SetActive();
+        }
+
+    }
 
 	void OnCollisionEnter2D(Collision2D col){
 		if (col.gameObject.name == "projectile") {
-			isActive = true;
-		}
+            if (!isActive) {
+                switchCount++;
+            }  
+            isActive = true;
+        }
 	}
 }
