@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
 	public GameObject shield;
 
-    public GameObject enemy;
+	public GameObject enemy;
 
 	private Animator playerAnim;
 
@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
 
 	public bool canBlock;
 
-    public bool isBlocking;
+	public bool isBlocking;
 
 	// The current scene.
 	private int currentScene;
@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
 		name = "Player";
 
 		// Sets the currentScene index to the actual current scene.
-		currentScene = SceneManager.GetActiveScene().buildIndex;
+		currentScene = SceneManager.GetActiveScene ().buildIndex;
 
 		playerAnim = GetComponent<Animator> ();
 
@@ -63,6 +63,8 @@ public class PlayerController : MonoBehaviour
 	{
 		if (!isRolling) {
 			playerMovement = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
+
+			DefinePlayerDirection (currentDirection);
 
 			if (Input.GetAxisRaw ("Horizontal") != 0 || Input.GetAxisRaw ("Vertical") != 0) {
 
@@ -92,6 +94,7 @@ public class PlayerController : MonoBehaviour
 					currentDirection = new Vector2 (1, -1); // currentDirection == DownRight
 				}
 			
+				//DefinePlayerDirection (currentDirection);
 			} else {
 
 				playerAnim.SetBool ("isWalking", false);
@@ -125,7 +128,7 @@ public class PlayerController : MonoBehaviour
 
 			shieldController = GameObject.Find ("projectile").GetComponent<ShieldController> ();
 
-			} else {
+		} else {
 				
 			playerAnim.SetBool ("canBlock", false);
 				
@@ -133,9 +136,9 @@ public class PlayerController : MonoBehaviour
 				
 			canBlock = false;
 
-            isBlocking = false;
+			isBlocking = false;
 
-        }
+		}
 
 
 		// Setting up the Roll button behavior
@@ -191,7 +194,7 @@ public class PlayerController : MonoBehaviour
 
 		shieldDeployed = true;
 
-        isBlocking = false;
+		isBlocking = false;
 	}
 
 	// This doesn't really do anything for now because there are
@@ -199,7 +202,7 @@ public class PlayerController : MonoBehaviour
 	void ShieldBlock ()
 	{
 		playerAnim.SetBool ("isBlocking", true);
-        isBlocking = true;
+		isBlocking = true;
 	}
 
 	// Enables shield blocking and throwing once the shield is returned.
@@ -220,48 +223,50 @@ public class PlayerController : MonoBehaviour
 		playerAnim.SetBool ("isRolling", false);
 	}
 
-	void OnTriggerStay2D(Collider2D col){
+	void OnTriggerStay2D (Collider2D col)
+	{
 		if (col.gameObject.layer == 9) {    //Hazard or Lava
-            if(!isRolling)
-			    Kill();
-		}
-        else if (col.gameObject.layer == 13)    //Enemy
-        {
-            if(!isBlocking)
-                Kill();
-        }
-		else if (col.gameObject.layer == 11) {  //Rift
-			NextScene();
+			if (!isRolling)
+				Kill ();
+		} else if (col.gameObject.layer == 13) {    //Enemy
+			if (!isBlocking)
+				Kill ();
+		} else if (col.gameObject.layer == 11) {  //Rift
+			NextScene ();
 		}
 	}
 
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        if (col.gameObject == enemy)
-        {
-            //Kill();
-        }
-        else if (col.gameObject.layer == 13)    //Enemy
-        {
-            if (!isBlocking)
-                Kill();
-        }
+	void OnCollisionEnter2D (Collision2D col)
+	{
+		if (col.gameObject == enemy) {
+			//Kill();
+		} else if (col.gameObject.layer == 13) {    //Enemy
+			if (!isBlocking)
+				Kill ();
+		}
 
-    }
+	}
 
-    // Kill the player and reload the level.
-    void Kill(){
+	// Kill the player and reload the level.
+	void Kill ()
+	{
 		transform.position = startPosition;
 		//Destroy(GameObject.Find ("projectile"));
 		Destroy (this.gameObject);
-		SceneManager.LoadScene(currentScene);
+
+		//float fadeTime = GetComponent<SceneFade> ().BeginFade (1);
+		//yield return new WaitForSeconds (fadeTime);
+		SceneManager.LoadScene (currentScene);
 	}
 
 	// Advance to the next level.
 	// Note: this is just a hack.
 	// Obviously we need to work out our scene transistions more thoroughly.
-	void NextScene(){
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+	void NextScene ()
+	{
+		//float fadeTime = GetComponent<SceneFade> ().BeginFade (1);
+		//yield return new WaitForSeconds (fadeTime);
+		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
 
-    }
+	}
 }

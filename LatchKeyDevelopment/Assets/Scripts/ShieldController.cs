@@ -19,6 +19,7 @@ public class ShieldController : MonoBehaviour
 	{
 		player = GameObject.FindWithTag ("Player");
 		playerController = player.GetComponent<PlayerController>();
+		Physics2D.IgnoreCollision (player.GetComponent<Collider2D> (), GetComponent<Collider2D> ());
 	}
 	
 	// Update is called once per frame
@@ -27,7 +28,9 @@ public class ShieldController : MonoBehaviour
 	}
 
 	void FixedUpdate(){
-		Physics2D.IgnoreCollision (player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+		//if (isReturnable == false) {
+		//	Physics2D.IgnoreCollision (player.GetComponent<Collider2D> (), GetComponent<Collider2D> ());
+		//}
 	}
 
 	void OnCollisionExit2D (Collision2D col)
@@ -37,10 +40,13 @@ public class ShieldController : MonoBehaviour
 			Kill();
 		} else {
 
-			if (col.gameObject.layer == 8) {
+			if (col.gameObject.layer == 8 || col.gameObject.layer == 13) {
 				--hitCounter;
 			} else if (col.gameObject.tag == "Hazard") {
 				Kill ();
+			}
+			else if(col.gameObject == player){
+					Kill ();
 			}
             
         }

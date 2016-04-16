@@ -36,10 +36,10 @@ public class LobsterProjectile : MonoBehaviour {
         {
             Kill();
         }
-        if (col.gameObject.tag == "Hazard")
+        /*if (col.gameObject.tag == "Hazard")
         {
             Kill();
-        }
+        }*/
         if(col.gameObject.tag == "Shield")
         {
             Kill();
@@ -55,18 +55,18 @@ public class LobsterProjectile : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.layer == 8)  //wall
+		if (col.gameObject.layer == 8) {  //wall
+			Kill ();
+		}
+        /*else if (col.gameObject.tag == "Hazard")
         {
             Kill();
-        }
-        else if (col.gameObject.tag == "Hazard")
-        {
-            Kill();
-        }
-        else if (col.gameObject.tag == "Shield")
-        {
-            Kill();
-        }
+        }*/
+        else if (col.gameObject.tag == "Shield") {
+			Kill ();
+		} else if (col.gameObject == player && playCont.isBlocking) {
+			Kill ();
+		}
     }
 
     // Destroys the shield projectile and resets the player shield capabilities.
