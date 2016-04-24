@@ -9,9 +9,9 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject start;
 
-    public Color statColor;
+    private Color statColor;
 
-	public string[] credits = { "Team Dungeon Masters" , "Team Lead:\tAaron Tolbert" , "Team Members:\tJoshua Agnes, Leo Wack," , "\t\tPaul Ross, Ryan Bonisch" };
+	private string[] credits = { "Team Dungeon Masters" , "Team Lead:\tAaron Tolbert" , "Team Members:\tJoshua Agnes, Leo Wack," , "\t\tPaul Ross, Ryan Bonisch" };
 
     public enum Page
     {
