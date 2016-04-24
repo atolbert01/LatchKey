@@ -16,9 +16,9 @@ public class SliderController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rBody = GetComponent<Rigidbody2D> ();
-	
+
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		rBody.velocity = new Vector2 (velocity, rBody.velocity.y);
@@ -36,7 +36,7 @@ public class SliderController : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D col){
-		
+
 		if (col.gameObject.layer == 8) {
 			wallColliding = true;
 		}

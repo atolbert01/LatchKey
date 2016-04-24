@@ -12,7 +12,12 @@ public class ShieldController : MonoBehaviour
 
 	public GameObject player;
 
+	public GameObject shieldReturner;
+
+	public GameObject shieldR;
+
 	public PlayerController playerController;
+
 
 	// Use this for initialization
 	void Start ()
@@ -20,8 +25,10 @@ public class ShieldController : MonoBehaviour
 		player = GameObject.FindWithTag ("Player");
 		playerController = player.GetComponent<PlayerController>();
 		Physics2D.IgnoreCollision (player.GetComponent<Collider2D> (), GetComponent<Collider2D> ());
+
+		shieldReturner = (GameObject)Resources.Load ("Shield");
 	}
-	
+
 	// Update is called once per frame
 	void Update ()
 	{
@@ -31,6 +38,8 @@ public class ShieldController : MonoBehaviour
 		//if (isReturnable == false) {
 		//	Physics2D.IgnoreCollision (player.GetComponent<Collider2D> (), GetComponent<Collider2D> ());
 		//}
+
+
 	}
 
 	void OnCollisionExit2D (Collision2D col)
@@ -42,26 +51,26 @@ public class ShieldController : MonoBehaviour
 
 			if (col.gameObject.layer == 8 || col.gameObject.layer == 13) {
 				--hitCounter;
-			} else if (col.gameObject.tag == "Hazard") {
+			} else if (col.gameObject.tag == "Hazard" || col.gameObject.layer == 9) {
 				Kill ();
 			}
 			else if(col.gameObject == player){
-					Kill ();
+				Kill ();
 			}
-            
-        }
+
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D col){
-		if (col.gameObject.tag == "Hazard") {
+		if (col.gameObject.tag == "Hazard" || col.gameObject.tag == "Slider") {
 			Kill ();
 		}     
-    }
-		
+	}
+
 	// Destroys the shield projectile and resets the player shield capabilities.
 	public void Kill(){
 		Destroy (this.gameObject);
 		playerController.shieldDeployed = false;
 	}
-		
+
 }
