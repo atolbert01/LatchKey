@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Score : MonoBehaviour {
 
-    public static int[] lvlScores = new int[3];
+    public static int[] lvlScores = new int[4];
     int currentScene;
     int totalScore;
 

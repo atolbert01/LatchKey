@@ -71,6 +71,7 @@ public class ShieldController : MonoBehaviour
 	public void Kill(){
 		Destroy (this.gameObject);
 		playerController.shieldDeployed = false;
+		//playerController.shieldCounter = 0;
 	}
 
 }

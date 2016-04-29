@@ -13,9 +13,12 @@ public class SliderController : MonoBehaviour {
 
 	public Transform lineEnd;
 
+	public PlayerController playerController;
+
 	// Use this for initialization
 	void Start () {
 		rBody = GetComponent<Rigidbody2D> ();
+		playerController = GameObject.Find ("Player").GetComponent<PlayerController> ();
 
 	}
 
@@ -39,6 +42,16 @@ public class SliderController : MonoBehaviour {
 
 		if (col.gameObject.layer == 8) {
 			wallColliding = true;
+		} else if (col.gameObject.layer == 12) { // player
+			playerController.Kill ();
+		} else if (col.gameObject.layer == 15) { // blocker
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D col){
+		if (col.gameObject.layer == 12) { // player
+			playerController.Kill ();
+		} else if (col.gameObject.layer == 15) { // blocker
 		}
 	}
 }
