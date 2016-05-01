@@ -21,6 +21,10 @@ public class LobsterProjectile : MonoBehaviour {
         dir = playerPos.position - transform.position;
         
         playCont = player.GetComponent<PlayerController>();
+
+        
+
+        
     }
 
     void FixedUpdate()
@@ -44,8 +48,9 @@ public class LobsterProjectile : MonoBehaviour {
         {
             Kill();
         }
-        if (col.gameObject == player)
-        {
+        //if (col.gameObject == player)
+		if (col.gameObject.layer == 15)
+		{
             if (playCont.isBlocking)
             {
                 Kill();
@@ -65,7 +70,8 @@ public class LobsterProjectile : MonoBehaviour {
         }*/ 
         else if (col.gameObject.tag == "Shield") {
 			Kill ();
-		} else if (col.gameObject == player && playCont.isBlocking) {
+		} //else if (col.gameObject == player && playCont.isBlocking) {
+		else if(col.gameObject.layer == 15 && playCont.isBlocking){
 			Kill ();
 		}
     } 

@@ -27,7 +27,19 @@ public class IntroMenu : MonoBehaviour {
         currentPage = Page.Main;
         toolbarInt = 0;
         color = Color.white;
-	}
+
+        //Temporary until we can link the scoring to the High Scores Menu
+        PlayerPrefs.SetString("num1Player", "Aaron Tolbert");
+        PlayerPrefs.SetInt("num1Player_highscore", 100);
+        PlayerPrefs.SetString("num2Player", "Joshua Agnes");
+        PlayerPrefs.SetInt("num2Player_highscore", 70);
+        PlayerPrefs.SetString("num3Player", "Leo Wack");
+        PlayerPrefs.SetInt("num3Player_highscore", 40);
+        PlayerPrefs.SetString("num4Player", "Paul Ross");
+        PlayerPrefs.SetInt("num4Player_highscore", 35);
+        PlayerPrefs.SetString("num5Player", "Ryan Bonisch");
+        PlayerPrefs.SetInt("num5Player_highscore", 20);
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -87,17 +99,6 @@ public class IntroMenu : MonoBehaviour {
 
     void showHighScore()
     {
-        //Temporary until we can link the scoring to the High Scores Menu
-        PlayerPrefs.SetString("num1Player", "Aaron Tolbert");
-        PlayerPrefs.SetInt("num1Player_highscore", 200);
-        PlayerPrefs.SetString("num2Player", "Joshua Agnes");
-        PlayerPrefs.SetInt("num2Player_highscore", 175);
-        PlayerPrefs.SetString("num3Player", "Leo Wack");
-        PlayerPrefs.SetInt("num3Player_highscore", 160);
-        PlayerPrefs.SetString("num4Player", "Paul Ross");
-        PlayerPrefs.SetInt("num4Player_highscore", 120);
-        PlayerPrefs.SetString("num5Player", "Ryan Bonisch");
-        PlayerPrefs.SetInt("num5Player_highscore", 100);
 
         int num1Player_highscore = PlayerPrefs.GetInt("num1Player_highscore");
         string num1Player = PlayerPrefs.GetString("num1Player");

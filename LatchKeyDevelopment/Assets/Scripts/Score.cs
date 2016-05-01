@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Score : MonoBehaviour {
 
-    public static int[] lvlScores = new int[3];
+    public static int[] lvlScores = new int[4];
     int currentScene;
     int totalScore;
 
@@ -34,7 +34,7 @@ public class Score : MonoBehaviour {
         GUI.Label(new Rect(110, 10, 100, 20), "Life: " + PlayerController.lifeCount.ToString());
         GUI.Label(new Rect(210, 10, 100, 20), "Time: " + Mathf.Floor(PlayerController.time).ToString());
 
-        currentScene = SceneManager.GetActiveScene().buildIndex;
+        currentScene = SceneManager.GetActiveScene().buildIndex - 1;
 
         if (currentScene > 0)
         {

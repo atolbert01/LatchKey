@@ -14,6 +14,8 @@ public class BoblinController : MonoBehaviour {
 
 	private bool isWalking;
 
+	public PlayerController playerController;
+
 	//private static GameObject[] LavaList;
 
 
@@ -22,6 +24,7 @@ public class BoblinController : MonoBehaviour {
 
 		boblinAnim = GetComponent<Animator>();
 		moveChoice = Random.Range (-2, 2);
+		playerController = GameObject.Find ("Player").GetComponent<PlayerController> ();
 
 		switch (moveChoice) 
 		{
@@ -130,7 +133,14 @@ public class BoblinController : MonoBehaviour {
         else if (col.gameObject.tag == "Switch")
         {
             colliding = true;
-        }
+		}
+		else if(col.gameObject.layer == 12){ // player
+			playerController.Kill();
+		}
+		else if (col.gameObject.layer == 15)    //blocker
+		{
+			colliding = true;
+		}
 
         //collisions that kill boblin
         if (col.gameObject.name == "projectile")
@@ -142,9 +152,12 @@ public class BoblinController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		if (col.gameObject.layer == 9) //hazard
-		{
+		if (col.gameObject.layer == 9) { //hazard
 			colliding = true; 
+		} else if (col.gameObject.layer == 15) { //blocker
+			colliding = true; 
+		} else if (col.gameObject.layer == 12) {
+			colliding = true;
 		}
 	}
 
