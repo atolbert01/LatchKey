@@ -21,6 +21,10 @@ public class LobsterProjectile : MonoBehaviour {
         dir = playerPos.position - transform.position;
         
         playCont = player.GetComponent<PlayerController>();
+
+        
+
+        
     }
 
     void FixedUpdate()
@@ -30,7 +34,7 @@ public class LobsterProjectile : MonoBehaviour {
         Physics2D.IgnoreCollision(enemy.GetComponent<Collider2D>(), GetComponent<Collider2D>());
     }
 
-    void OnCollisionExit2D(Collision2D col)
+    void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.layer == 8)  //wall
         {
@@ -44,8 +48,9 @@ public class LobsterProjectile : MonoBehaviour {
         {
             Kill();
         }
-        if (col.gameObject == player)
-        {
+        //if (col.gameObject == player)
+		if (col.gameObject.layer == 15)
+		{
             if (playCont.isBlocking)
             {
                 Kill();
@@ -53,6 +58,7 @@ public class LobsterProjectile : MonoBehaviour {
         }
     }
 
+    
     void OnTriggerEnter2D(Collider2D col)
     {
 		if (col.gameObject.layer == 8) {  //wall
@@ -61,13 +67,14 @@ public class LobsterProjectile : MonoBehaviour {
         /*else if (col.gameObject.tag == "Hazard")
         {
             Kill();
-        }*/
+        }*/ 
         else if (col.gameObject.tag == "Shield") {
 			Kill ();
-		} else if (col.gameObject == player && playCont.isBlocking) {
+		} //else if (col.gameObject == player && playCont.isBlocking) {
+		else if(col.gameObject.layer == 15 && playCont.isBlocking){
 			Kill ();
 		}
-    }
+    } 
 
     // Destroys the shield projectile and resets the player shield capabilities.
     public void Kill()

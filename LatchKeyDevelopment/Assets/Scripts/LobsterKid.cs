@@ -7,11 +7,17 @@ public class LobsterKid : MonoBehaviour
     private static GameObject[] LavaList;
     public GameObject shooter;
 
+    GameObject player;
+
     public float time;
     private int lavaTile;
     public bool isVisible = false;
     public bool isKillable;
 
+    private float lineOfSight;
+
+    
+        
 
     // Use this for initialization
     void Start()
@@ -31,6 +37,10 @@ public class LobsterKid : MonoBehaviour
 
         //Index of LavaList to appear on
         lavaTile = Random.Range(0, LavaList.Length);
+
+        player = GameObject.FindGameObjectWithTag("Player");
+
+        lineOfSight = 20f;
     }
 
     void FixedUpdate()
@@ -45,13 +55,14 @@ public class LobsterKid : MonoBehaviour
 
     }
 
-    //die
+    //Death
     void OnTriggerEnter2D(Collider2D col)
     {
         if (isVisible) { 
             if (col.gameObject.name == "projectile")
             {
                 Kill();
+                PlayerController.lvlScore += 25;
             }
         }
     }
@@ -71,8 +82,9 @@ public class LobsterKid : MonoBehaviour
             GetComponent<Renderer>().enabled = true;
             isVisible = true;
             isKillable = true;
-            this.time = 3;      //how long enemy is visable for
-            Shoot();
+            this.time = 3;      //how long enemy is visible for
+            if (Vector2.Distance(transform.position, player.transform.position) < lineOfSight)
+                Shoot();
         }
         else
         {

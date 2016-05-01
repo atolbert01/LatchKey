@@ -6,21 +6,33 @@ Direct3D:
     Vendor:   NVIDIA
     VRAM:     1989 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Leo\Documents\Unity\LatchKey-master\LatchKeyDevelopment\test_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Leo\Documents\Unity\LatchKey-master\LatchKeyDevelopment\test_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Leo\Documents\Unity\LatchKey-master\LatchKeyDevelopment\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Leo\Documents\Unity\LatchKey-master\LatchKeyDevelopment\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Leo\Documents\Unity\LatchKey-master\LatchKeyDevelopment\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Leo\Documents\Unity\LatchKey-master\LatchKeyDevelopment\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\Leo\Documents\Unity\LatchKey-master\LatchKeyDevelopment\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\Leo\Documents\Unity\LatchKey-master\LatchKeyDevelopment\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Leo\Documents\GitHub\LatchKey\LatchKeyDevelopment\test_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Leo\Documents\GitHub\LatchKey\LatchKeyDevelopment\test_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Leo\Documents\GitHub\LatchKey\LatchKeyDevelopment\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Leo\Documents\GitHub\LatchKey\LatchKeyDevelopment\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Leo\Documents\GitHub\LatchKey\LatchKeyDevelopment\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Leo\Documents\GitHub\LatchKey\LatchKeyDevelopment\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Leo\Documents\GitHub\LatchKey\LatchKeyDevelopment\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Leo\Documents\GitHub\LatchKey\LatchKeyDevelopment\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 - Completed reload, in  0.036 seconds
-Platform assembly: C:\Users\Leo\Documents\Unity\LatchKey-master\LatchKeyDevelopment\test_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\Leo\Documents\Unity\LatchKey-master\LatchKeyDevelopment\test_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\Leo\Documents\GitHub\LatchKey\LatchKeyDevelopment\test_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Leo\Documents\GitHub\LatchKey\LatchKeyDevelopment\test_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.792926 ms
+UnloadTime: 0.426637 ms
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.290553 ms
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 3912.
+Total: 0.930039 ms (FindLiveObjects: 0.214351 ms CreateObjectMapping: 0.086803 ms MarkObjects: 0.613235 ms  DeleteObjects: 0.015057 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.261605 ms
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 11014.
+Total: 1.173030 ms (FindLiveObjects: 0.261001 ms CreateObjectMapping: 0.062888 ms MarkObjects: 0.836740 ms  DeleteObjects: 0.012105 ms)
+
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 1ee8 -> priority: 1 
+  Thread -> id: 1f4c -> priority: 1 
