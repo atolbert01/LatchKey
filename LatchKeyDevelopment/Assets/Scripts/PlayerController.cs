@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
 
 	public bool isThrowing;
 
-	public static int lifeCount = 3;
+	public static int lifeCount = 7;
 
 	public static int lvlScore;
 
@@ -406,8 +406,10 @@ public class PlayerController : MonoBehaviour
 	}*/
 
 	// Kill the player and reload the level.
+
 	public void Kill ()
 	{
+        
 		transform.position = startPosition;
 		lifeCount--;
 		Destroy (this.gameObject);
@@ -419,13 +421,13 @@ public class PlayerController : MonoBehaviour
 			SceneManager.LoadScene (currentScene);
 		else     //Game Over
 		{
-			lifeCount = 3;
+			lifeCount = 7;
 			time = 0;
 			totalScore = 0;
 			//Game Over screen?
 			SceneManager.LoadScene(0);
 		}
-
+        
 	}
 
 	// Uncomment below for infinite lives.
@@ -464,7 +466,7 @@ public class PlayerController : MonoBehaviour
 		if (lvlScore < 0)
 			lvlScore = 0;
 
-		Score.lvlScores[currentScene] = lvlScore;
+		Score.lvlScores[currentScene-1] = lvlScore;
 		totalScore += lvlScore;
 	}
 

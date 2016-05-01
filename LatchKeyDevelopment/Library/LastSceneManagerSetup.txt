@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Intro Scene.unity
+- path: Assets/Scenes/ThisIsTough.unity
   isLoaded: 1
   isActive: 1

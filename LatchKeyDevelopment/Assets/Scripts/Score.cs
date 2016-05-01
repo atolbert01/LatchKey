@@ -36,19 +36,20 @@ public class Score : MonoBehaviour {
 
         currentScene = SceneManager.GetActiveScene().buildIndex;
 
-        if (currentScene > 0)
+        if (currentScene > 1)
         {
             int j = 10;
-            for(int i = 0; i < currentScene; i++) {
+            for(int i = 0; i < currentScene-1; i++) {
                 
                 GUI.Label(new Rect(Screen.width - 150, j, 100, 20), "Level " + (i+1)
                     + ": " + lvlScores[i].ToString());
                 j += 20;
             }
-            if (currentScene == lvlScores.Length-1 && PlayerController.lvlComplete)
+            if (currentScene == lvlScores.Length && PlayerController.lvlComplete)
             {
-                GUI.Label(new Rect(Screen.width - 150, j, 100, 20), "Level " + (currentScene + 1)
-                    + ": " + lvlScores[currentScene].ToString());
+                Debug.Log(currentScene);
+                GUI.Label(new Rect(Screen.width - 150, j, 100, 20), "Level " + (currentScene)
+                    + ": " + lvlScores[currentScene-1].ToString());
 
                 j += 20;
                        
@@ -56,13 +57,13 @@ public class Score : MonoBehaviour {
 
                 totalScore = PlayerController.totalScore;
 
-                if (totalScore < 30)
+                if (totalScore < 100)
                     rank = "Lame!";
-                else if (totalScore >= 30 && totalScore < 80)
+                else if (totalScore >= 100 && totalScore < 275)
                     rank = "Rookie";             
-                else if (totalScore >= 80 && totalScore < 150)
+                else if (totalScore >= 275 && totalScore < 450)
                     rank = "Semi-Pro";               
-                else if (totalScore >= 150)
+                else if (totalScore >= 450)
                     rank = "Pro!";
 
                 j += 20;

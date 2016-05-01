@@ -75,39 +75,11 @@ public class ArchieController : MonoBehaviour
 
     void Update()
     {
-        time -= Time.deltaTime;
-        this.GetComponent<Rigidbody2D>().velocity = moveDir.normalized * 2f;
-        boblinAnim.SetInteger("moveChoice", moveChoice);
-
-        switch (moveChoice)
+        if (this != null)
         {
-            case -1:
-                moveDir = Vector2.down;
-                break;
-            case 1:
-                moveDir = Vector2.up;
-                break;
-            case 2:
-                moveDir = Vector2.right;
-                break;
-            case -2:
-                moveDir = Vector2.left;
-                break;
-            case 0:
-                moveChoice = Random.Range(-2, 2);
-                break;
-        }
-
-        if (colliding)    //Reverse direction
-        {
-            moveChoice *= -1;
-            colliding = false;
-        }
-
-        //Time is up, new random direction and interval
-        if (time <= 0)
-        {
-            moveChoice = Random.Range(-2, 2);
+            time -= Time.deltaTime;
+            this.GetComponent<Rigidbody2D>().velocity = moveDir.normalized * 2f;
+            boblinAnim.SetInteger("moveChoice", moveChoice);
 
             switch (moveChoice)
             {
@@ -128,17 +100,49 @@ public class ArchieController : MonoBehaviour
                     break;
             }
 
-            time = Random.Range(1f, 3f);
-        }
-        if (Vector2.Distance(transform.position, player.transform.position) < lineOfSight)
-        {
-            //if (Mathf.Floor(transform.localPosition.y) == Mathf.Floor(player.transform.localPosition.y) || Mathf.Floor(transform.localPosition.x) == Mathf.Floor(player.transform.localPosition.x))
-           // {
+            if (colliding)    //Reverse direction
+            {
+                moveChoice *= -1;
+                colliding = false;
+            }
+
+            //Time is up, new random direction and interval
+            if (time <= 0)
+            {
+                moveChoice = Random.Range(-2, 2);
+
+                switch (moveChoice)
+                {
+                    case -1:
+                        moveDir = Vector2.down;
+                        break;
+                    case 1:
+                        moveDir = Vector2.up;
+                        break;
+                    case 2:
+                        moveDir = Vector2.right;
+                        break;
+                    case -2:
+                        moveDir = Vector2.left;
+                        break;
+                    case 0:
+                        moveChoice = Random.Range(-2, 2);
+                        break;
+                }
+
+                time = Random.Range(1f, 3f);
+            }
+            if (Vector2.Distance(transform.position, player.transform.position) < lineOfSight)
+            {
+                //if (Mathf.Floor(transform.localPosition.y) == Mathf.Floor(player.transform.localPosition.y) || Mathf.Floor(transform.localPosition.x) == Mathf.Floor(player.transform.localPosition.x))
+                // {
                 Shoot();
-                
-            //}
-            //else shotTimer = 0;
+
+                //}
+                //else shotTimer = 0;
+            }
         }
+        
 
         
     }

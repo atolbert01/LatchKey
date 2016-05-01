@@ -19,7 +19,7 @@ public class ArrowController : MonoBehaviour {
         playerPos = player.transform;
 
         dir = playerPos.position - transform.position;
-        Debug.Log(dir / dir.magnitude);
+
 
         playCont = player.GetComponent<PlayerController>();
 

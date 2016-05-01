@@ -16,6 +16,7 @@ public class LobsterKid : MonoBehaviour
 
     private float lineOfSight;
 
+
     
         
 
@@ -101,10 +102,12 @@ public class LobsterKid : MonoBehaviour
 
     void Shoot()
     {
-        GameObject projectile = Instantiate(shooter) as GameObject;
 
-        projectile.name = "shooter";
+            GameObject projectile = Instantiate(shooter) as GameObject;
 
-        projectile.transform.position = transform.position;
+            projectile.name = "shooter";
+
+            projectile.transform.position = transform.position;
+            
     }
 }
