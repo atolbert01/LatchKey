@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
 
 	public bool isThrowing;
 
-	public static int lifeCount = 3;
+	public static int lifeCount = 7;
 
 	public static int lvlScore;
 
@@ -64,6 +64,14 @@ public class PlayerController : MonoBehaviour
 	public bool didJustRoll = false;
 
 	public bool canThrow;
+
+	public bool testThrow;
+
+	public bool testBlock;
+
+	public bool testRoll;
+
+	public bool testRespawn;
 
 
 	// The current scene.
@@ -277,6 +285,21 @@ public class PlayerController : MonoBehaviour
 				canBlock = false;
 			}
 		}
+
+		if (testThrow)
+		{
+			ShieldLaunch();
+		}
+		if (testBlock)
+		{
+			ShieldBlock();
+		}
+		if (testRoll)
+		{
+			isRolling = true;
+		}
+
+
 	}
 
 	void FixedUpdate ()
@@ -408,6 +431,13 @@ public class PlayerController : MonoBehaviour
 	// Kill the player and reload the level.
 	public void Kill ()
 	{
+
+		if(testRespawn)
+		{
+			Destroy(this.gameObject);
+			return;
+		}
+
 		transform.position = startPosition;
 		lifeCount--;
 		Destroy (this.gameObject);
@@ -419,9 +449,9 @@ public class PlayerController : MonoBehaviour
 			SceneManager.LoadScene (currentScene);
 		else     //Game Over
 		{
-			lifeCount = 3;
+			lifeCount = 7;
 			time = 0;
-			//totalScore = 0;
+			totalScore = 0;
 			//Game Over screen?
 			SceneManager.LoadScene("GameOver");
 		}
@@ -464,7 +494,7 @@ public class PlayerController : MonoBehaviour
 		if (lvlScore < 0)
 			lvlScore = 0;
 
-		Score.lvlScores[currentScene - 1] = lvlScore;
+		Score.lvlScores[currentScene - 3] = lvlScore;
 		totalScore += lvlScore;
 	}
 

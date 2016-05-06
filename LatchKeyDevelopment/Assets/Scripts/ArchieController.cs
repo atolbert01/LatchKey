@@ -11,7 +11,7 @@ public class ArchieController : MonoBehaviour
 
     private bool colliding;
 
-    private Animator boblinAnim;
+    private Animator archieAnim;
 
     private bool isWalking;
 
@@ -42,7 +42,7 @@ public class ArchieController : MonoBehaviour
 
         //Random direction
 
-        boblinAnim = GetComponent<Animator>();
+        archieAnim = GetComponent<Animator>();
         moveChoice = Random.Range(-2, 2);
 
         lineOfSight = 10f;
@@ -77,7 +77,6 @@ public class ArchieController : MonoBehaviour
     {
         time -= Time.deltaTime;
         this.GetComponent<Rigidbody2D>().velocity = moveDir.normalized * 2f;
-        boblinAnim.SetInteger("moveChoice", moveChoice);
 
         switch (moveChoice)
         {
@@ -98,11 +97,10 @@ public class ArchieController : MonoBehaviour
                 break;
         }
 
-        if (colliding)    //Reverse direction
-        {
-            moveChoice *= -1;
-            colliding = false;
-        }
+		if (colliding) {    //Reverse direction
+			moveChoice *= -1;
+			colliding = false;
+		}
 
         //Time is up, new random direction and interval
         if (time <= 0)
@@ -144,24 +142,37 @@ public class ArchieController : MonoBehaviour
     }
 
  
+	void SetAnimIsColliding(){
+			archieAnim.SetBool ("isColliding", false);
+	}
+
+	void SetAnimIsShooting(){
+		archieAnim.SetBool ("isShooting", false);
+	}
 
     void OnCollisionEnter2D(Collision2D col)
     {
         //collisions that reverse direction
 		if (col.gameObject.layer == 8) {  //wall
 			colliding = true;
+			archieAnim.SetBool ("isColliding", true);
 		} else if (col.gameObject.layer == 9) { //hazard
 			colliding = true;
+			archieAnim.SetBool ("isColliding", true);
 		} else if (col.gameObject.tag == "Lava") {
 			colliding = true;
+			archieAnim.SetBool ("isColliding", true);
 		} else if (col.gameObject.layer == 13) {    //enemy
 			colliding = true;
+			archieAnim.SetBool ("isColliding", true);
 		} else if (col.gameObject.tag == "Switch") {
 			colliding = true;
+			archieAnim.SetBool ("isColliding", true);
 		} else if (col.gameObject.layer == 12) { // player
 			playerController.Kill ();
 		} else if (col.gameObject.layer == 15) { // blocker
 			colliding = true;
+			archieAnim.SetBool ("isColliding", true);
 		}
 
         //collisions that kill boblin
@@ -176,10 +187,13 @@ public class ArchieController : MonoBehaviour
     {
 		if (col.gameObject.layer == 9) { //hazard
 			colliding = true;
+			archieAnim.SetBool ("isColliding", true);
 		} else if (col.gameObject.layer == 15) {
 			colliding = true;
+			archieAnim.SetBool ("isColliding", true);
 		} else if (col.gameObject.layer == 12) {
 			colliding = true;
+			archieAnim.SetBool ("isColliding", true);
 		}
     }
 
@@ -187,6 +201,7 @@ public class ArchieController : MonoBehaviour
     {
         shotTimer -= Time.deltaTime;
         if (shotTimer < 0) { 
+			archieAnim.SetBool ("isShooting", true);
             GameObject projectile = Instantiate(arrow) as GameObject;
             projectile.name = "Arrow";
             Physics2D.IgnoreCollision(projectile.GetComponent<Collider2D>(), GetComponent<Collider2D>());

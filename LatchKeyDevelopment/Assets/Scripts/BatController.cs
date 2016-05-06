@@ -3,14 +3,12 @@ using System.Collections;
 
 public class BatController : MonoBehaviour {
 
-    private Quaternion defaultRotation;
+    //private Quaternion defaultRotation;
     private Vector3 defaultPosition;
     private Vector3 target;
-    private Vector3 dir;
 
     private float lineOfSight;
     private float moveSpeed;
-    private float angle;
     private const float startRange = 0.1f;
 
     private GameObject player;
@@ -19,13 +17,13 @@ public class BatController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         defaultPosition = transform.position;
-        defaultRotation = transform.rotation;
+        //defaultRotation = transform.rotation;
         player = GameObject.FindGameObjectWithTag("Player");
         playerController = player.GetComponent<PlayerController>();
         //Range at which enemy will chase player
         lineOfSight = 5;
         //Enemy chase speed
-        moveSpeed = 3.5f;
+        moveSpeed = 0.07f;
     }
 	
 	// Update is called once per frame
@@ -33,17 +31,19 @@ public class BatController : MonoBehaviour {
         if (Vector2.Distance(transform.position, player.transform.position) < lineOfSight)  //Player in enemy range
         {
             target = player.transform.position;          
-            MoveTowards(target);
+
+			transform.position = Vector2.MoveTowards (transform.position, target, moveSpeed);
         }
         else
         {           
             if (Vector2.Distance(transform.position, defaultPosition) > startRange) //Player out of enemy range, not at defaultPosition
             {
-                MoveTowards(defaultPosition);
+				defaultPosition = transform.position;
+				transform.position = defaultPosition;
             }
             else    //Resets object/sprite position and rotation
             {
-                transform.rotation = defaultRotation;
+				defaultPosition = transform.position;
                 transform.position = defaultPosition;
             }
         }
@@ -67,16 +67,6 @@ public class BatController : MonoBehaviour {
 			playerController.Kill();
 		}
 	}
-
-    //There's a much simpler way to do this using transform.LookAt(), but that rotates the z axis
-    //Enemy faces and moves toward a target position
-    void MoveTowards(Vector3 target)
-    {   
-        dir = target - transform.position;
-        angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.position += transform.right * moveSpeed * Time.deltaTime;
-    }
 
     public void Kill()
     {
