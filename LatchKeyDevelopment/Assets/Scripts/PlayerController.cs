@@ -65,6 +65,16 @@ public class PlayerController : MonoBehaviour
 
 	public bool canThrow;
 
+	public bool testThrow;
+
+	public bool testBlock;
+
+	public bool testRoll;
+
+	public bool testRespawn;
+
+    public bool shieldReturn;
+
 
 	// The current scene.
 	private int currentScene;
@@ -195,12 +205,19 @@ public class PlayerController : MonoBehaviour
 
 		}
 
-		if(shieldDeployed && (Input.GetButtonDown("Shield") || Input.GetButtonUp("Shield") || Input.GetButton("Shield"))){
-			ShieldReturn ();
-		}
+        //if(shieldDeployed && (Input.GetButtonDown("Shield") || Input.GetButtonUp("Shield") || Input.GetButton("Shield")))
+        if (shieldDeployed && (Input.GetButtonDown("Shield")))
+        {
+            shieldReturn = true;
+        }
+        if (shieldReturn)
+        {
+            ReturnShield();
+        }
+        
 
-		// Setting the shieldCounter which determines the state of the player
-		if (shieldDeployed) {
+        // Setting the shieldCounter which determines the state of the player
+        if (shieldDeployed) {
 			shieldCounter = 2;
 		} else if (isBlocking && !shieldDeployed) {
 			shieldCounter = 1;
@@ -246,7 +263,7 @@ public class PlayerController : MonoBehaviour
 		case 2:
 			
 			if(Input.GetButtonUp("Shield")){
-				ShieldReturn ();
+				//ShieldReturn ();
 			}
 			break;
 		default:
@@ -277,6 +294,21 @@ public class PlayerController : MonoBehaviour
 				canBlock = false;
 			}
 		}
+
+		if (testThrow)
+		{
+			ShieldLaunch();
+		}
+		if (testBlock)
+		{
+			ShieldBlock();
+		}
+		if (testRoll)
+		{
+			isRolling = true;
+		}
+
+
 	}
 
 	void FixedUpdate ()
@@ -284,14 +316,19 @@ public class PlayerController : MonoBehaviour
 		centerRot = Mathf.Atan2(currentDirection.x, -currentDirection.y) * Mathf.Rad2Deg;
 		centerPoint.transform.rotation = (Quaternion.Euler(new Vector3(0, 0, centerRot)));
 
-		if ((!isBlocking || isRolling || shieldDeployed) && !isThrowing) {
-			GetComponent<Rigidbody2D> ().MovePosition (GetComponent<Rigidbody2D> ().position + playerMovement * moveSpeed * Time.deltaTime);
-		} else if (isRolling) {
-			GetComponent<Rigidbody2D> ().MovePosition (GetComponent<Rigidbody2D> ().position * moveSpeed * Time.deltaTime);
-		} else if (isThrowing) {
-			GetComponent<Rigidbody2D> ().MovePosition (GetComponent<Rigidbody2D> ().position);
-		}
-	}
+        if ((!isBlocking || shieldDeployed) && (!isThrowing && !isRolling))
+        {
+            GetComponent<Rigidbody2D>().MovePosition(GetComponent<Rigidbody2D>().position + playerMovement * moveSpeed * Time.deltaTime);
+        }
+        else if (isRolling)
+        {
+            GetComponent<Rigidbody2D>().MovePosition(GetComponent<Rigidbody2D>().position + playerMovement * (moveSpeed * 1.25f)* Time.deltaTime);
+        }
+        else if (isThrowing)
+        {
+            GetComponent<Rigidbody2D>().MovePosition(GetComponent<Rigidbody2D>().position);
+        }
+    }
 
 	// Sends the axis input to the animator.
 	void DefinePlayerDirection (Vector2 input)
@@ -337,10 +374,28 @@ public class PlayerController : MonoBehaviour
 			shieldDeployed = true;
 
 			isBlocking = false;
-		} else {
-			return;
-		}
+		} 
 	}
+
+    void ReturnShield()
+    {   
+        //kind of bounces until hitcounter reaches limit, use either this or kill on wall collision
+        //if (!shieldController.isColliding)
+            projectile.transform.position = Vector2.MoveTowards(projectile.transform.position, transform.position, 1f);
+        
+        if (projectile.transform.position == transform.position)
+        {
+            shieldController.Kill();         
+        }
+        
+        //kills on wall collision
+        else if (shieldController.isColliding)
+        {
+            shieldController.Kill();
+        }
+       
+    }
+
 
 	// Sets isThrowing to false after animation completes.
 	void ThrowingEnd(){
@@ -349,7 +404,7 @@ public class PlayerController : MonoBehaviour
 		shieldCounter = 2;
 	}
 
-
+    
 
 
 	// Enables shield blocking and throwing once the shield is returned.
@@ -374,42 +429,18 @@ public class PlayerController : MonoBehaviour
 		playerAnim.SetBool ("canBlock", true);
 		playerAnim.SetBool ("isRolling", false);
 	}   
-	/*
-	public virtual void OnTriggerStay2D (Collider2D col)
-	{
-		if (col.gameObject.layer == 9) {    //Hazard or Lava
-			if (col.gameObject.tag == "Slider")       //Sliders always kill
-				Kill ();
-			else if (!isRolling)    //Can roll over other hazards
-				Kill ();
-		} else if (col.gameObject.layer == 13) {    //Enemy
-			//if (!isBlocking)
-				Kill ();
-		} else if (col.gameObject.layer == 11) {  //Rift
-			NextScene ();
-		} else if (col.gameObject.layer == 14) {
-			if (!isRolling) {
-				Kill ();
-			}
-		}
-	}
-
-	public virtual void OnCollisionEnter2D (Collision2D col)
-	{
-		if (col.gameObject == enemy) {
-			//Kill();
-		} else if (col.gameObject.layer == 13) {    //Enemy
-			//if (!isBlocking)
-				Kill ();
-		}
-
-	}*/
+	
 
 	// Kill the player and reload the level.
-
 	public void Kill ()
 	{
         
+		if(testRespawn)
+		{
+			Destroy(this.gameObject);
+			return;
+		}
+
 		transform.position = startPosition;
 		lifeCount--;
 		Destroy (this.gameObject);
@@ -424,39 +455,13 @@ public class PlayerController : MonoBehaviour
 			lifeCount = 7;
 			time = 0;
 			totalScore = 0;
-			//Game Over screen?
-			SceneManager.LoadScene(0);
+			
+			SceneManager.LoadScene("GameOver");
 		}
         
 	}
 
-	// Uncomment below for infinite lives.
-	/*public void Kill ()
-	{
-		transform.position = startPosition;
-		//Destroy(GameObject.Find ("projectile"));
-		//lifeCount--;
-		Destroy (this.gameObject);
 
-		//float fadeTime = GetComponent<SceneFade> ().BeginFade (1);
-		//yield return new WaitForSeconds (fadeTime);
-
-		if (lifeCount > 0)
-			SceneManager.LoadScene (currentScene);
-		else     //Game Over
-		{
-			lifeCount = 3;
-			time = 0;
-			totalScore = 0;
-			//Game Over screen?
-			SceneManager.LoadScene(0);
-		}
-
-	}*/
-
-	// Uncomment below and comment out the above Kill() for testing mode.
-	/*public void Kill(){
-	}*/
 
 	//Calculates total score for level
 	void ScoreLvl()
@@ -466,25 +471,21 @@ public class PlayerController : MonoBehaviour
 		if (lvlScore < 0)
 			lvlScore = 0;
 
-		Score.lvlScores[currentScene-1] = lvlScore;
+		Score.lvlScores[currentScene - 1] = lvlScore;
 		totalScore += lvlScore;
 	}
 
 	// Advance to the next level.
-	// Note: this is just a hack.
-	// Obviously we need to work out our scene transistions more thoroughly.
-	public void NextScene ()
+	public IEnumerator NextScene ()
 	{
-		//float fadeTime = GetComponent<SceneFade> ().BeginFade (1);
-		//yield return new WaitForSeconds (fadeTime);
-
 
 		if(!lvlComplete)
 			ScoreLvl();
 
 		lvlComplete = true;
+        float fadeTime = GameObject.Find("Main Camera").GetComponent<Fader>().BeginFade(1);
+        yield return new WaitForSeconds(fadeTime);
 
-		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
-
-	}
+        SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
+    }
 }

@@ -30,10 +30,12 @@ public class SwitchController : MonoBehaviour {
 		if (isActive) {
 			switchAnim.SetBool ("isActive", true);
 		}
+
         if (switchCount == numSwitch)
         {
             riftController.SetActive();
         }
+
 
     }
 
@@ -41,7 +43,8 @@ public class SwitchController : MonoBehaviour {
 		if (col.gameObject.name == "projectile") {
             if (!isActive) {
                 switchCount++;
-            }  
+                
+            }
             isActive = true;
         }
 	}

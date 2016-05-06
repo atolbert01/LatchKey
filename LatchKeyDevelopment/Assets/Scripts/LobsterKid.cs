@@ -4,110 +4,109 @@ using System.Collections;
 public class LobsterKid : MonoBehaviour
 {
 
-    private static GameObject[] LavaList;
-    public GameObject shooter;
+	private static GameObject[] LavaList;
+	public GameObject shooter;
 
-    GameObject player;
+	GameObject player;
 
-    public float time;
-    private int lavaTile;
-    public bool isVisible = false;
-    public bool isKillable;
+	public float time;
+	private int lavaTile;
+	public bool isVisible = false;
+	public bool isKillable;
 
-    private float lineOfSight;
+	private float lineOfSight;
 
 
-    
-        
 
-    // Use this for initialization
-    void Start()
-    {
-        //Load enemy projectile
-        shooter = (GameObject)Resources.Load("Shooter");
 
-        //Default to invisible when level starts
-        this.GetComponent<Renderer>().enabled = false;
 
-        //List of all lava tiles where enemy can appear
-        LavaList = GameObject.FindGameObjectsWithTag("Lava");
+	// Use this for initialization
+	void Start()
+	{
+		//Load enemy projectile
+		shooter = (GameObject)Resources.Load("Shooter");
 
-        //Interval at which enemies appear
-        //Randomly between 4 and 6 seconds
-        time = Random.Range(4.0f, 6.0f);
+		//Default to invisible when level starts
+		this.GetComponent<Renderer>().enabled = false;
 
-        //Index of LavaList to appear on
-        lavaTile = Random.Range(0, LavaList.Length);
+		//List of all lava tiles where enemy can appear
+		LavaList = GameObject.FindGameObjectsWithTag("Lava");
 
-        player = GameObject.FindGameObjectWithTag("Player");
+		//Interval at which enemies appear
+		//Randomly between 4 and 6 seconds
+		time = Random.Range(4.0f, 6.0f);
 
-        lineOfSight = 20f;
-    }
+		//Index of LavaList to appear on
+		lavaTile = Random.Range(0, LavaList.Length);
 
-    void FixedUpdate()
-    {
-        //Timer
-        time -= Time.deltaTime;
+		player = GameObject.FindGameObjectWithTag("Player");
 
-        if (time <= 0)
-        {   
-            AppearRandomly(time, lavaTile);
-        }
+		lineOfSight = 20f;
 
     }
 
-    //Death
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        if (isVisible) { 
-            if (col.gameObject.name == "projectile")
-            {
-                Kill();
-                PlayerController.lvlScore += 25;
-            }
-        }
-    }
+	void FixedUpdate()
+	{
+		//Timer
+		time -= Time.deltaTime;
+
+		if (time <= 0)
+		{   
+			AppearRandomly(time, lavaTile);
+		}
+
+	}
+
+	//Death
+	void OnTriggerEnter2D(Collider2D col)
+	{
+		if (isVisible) { 
+			if (col.gameObject.name == "projectile")
+			{
+				Kill();
+				PlayerController.lvlScore += 25;
+			}
+		}
+	}
 
 
-    public void Kill()
-    {
-        Destroy(this.gameObject);
-    }
+	public void Kill()
+	{
+		Destroy(this.gameObject);
+	}
 
-    //Logic for timing and positioning
-    private void AppearRandomly(float time, int lavaTile)
-    {
-        if (!isVisible)
-        {
-            transform.position = LavaList[lavaTile].transform.position;
-            GetComponent<Renderer>().enabled = true;
-            isVisible = true;
-            isKillable = true;
-            this.time = 3;      //how long enemy is visible for
-            if (Vector2.Distance(transform.position, player.transform.position) < lineOfSight)
-                Shoot();
-        }
-        else
-        {
-            GetComponent<Renderer>().enabled = false;
-            isVisible = false;
-            isKillable = false;
-            //Get new random time and vector
-            this.time = Random.Range(4.0f, 6.0f);
-            this.lavaTile = Random.Range(0, LavaList.Length);
-        }
+	//Logic for timing and positioning
+	private void AppearRandomly(float time, int lavaTile)
+	{
+		if (!isVisible)
+		{
+			transform.position = LavaList[lavaTile].transform.position;
+			GetComponent<Renderer>().enabled = true;
+			isVisible = true;
+			isKillable = true;
+			this.time = 3;      //how long enemy is visible for
+			if (Vector2.Distance(transform.position, player.transform.position) < lineOfSight)
+				Shoot();
+		}
+		else
+		{
+			GetComponent<Renderer>().enabled = false;
+			isVisible = false;
+			isKillable = false;
+			//Get new random time and vector
+			this.time = Random.Range(4.0f, 6.0f);
+			this.lavaTile = Random.Range(0, LavaList.Length);
+		}
 
 
-    }
+	}
 
-    void Shoot()
-    {
-
+	void Shoot()
+	{
             GameObject projectile = Instantiate(shooter) as GameObject;
 
             projectile.name = "shooter";
 
-            projectile.transform.position = transform.position;
-            
-    }
+            projectile.transform.position = transform.position;      
+	}
 }

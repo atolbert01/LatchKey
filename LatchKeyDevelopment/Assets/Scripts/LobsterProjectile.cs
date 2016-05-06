@@ -10,7 +10,9 @@ public class LobsterProjectile : MonoBehaviour {
     public GameObject player;
     public GameObject enemy;
     Vector2 dir;
-    private float projectileSpeed = 10f;
+    private float projectileSpeed = 14f;
+
+    private float shotTime;
 
     // Use this for initialization
     void Start()
@@ -18,20 +20,29 @@ public class LobsterProjectile : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player");
         playerPos = player.transform;
         
-        dir = playerPos.position - transform.position;
+        //dir = playerPos.position - transform.position;
         
         playCont = player.GetComponent<PlayerController>();
 
-        
+        shotTime = 0.75f;  //time between lobster kid appearance and shot
 
         
     }
 
     void FixedUpdate()
     {
-        //Projectile moves forward in a line at given speed
-        this.GetComponent<Rigidbody2D>().velocity = dir.normalized * projectileSpeed;
-        Physics2D.IgnoreCollision(enemy.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        shotTime -= Time.deltaTime;
+
+        if (shotTime > 0)
+            dir = playerPos.position - transform.position;
+
+        else if (shotTime <= 0)
+        {
+            //Projectile moves forward in a line at given speed
+            this.GetComponent<Rigidbody2D>().velocity = dir.normalized * projectileSpeed;
+            Physics2D.IgnoreCollision(enemy.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        }
+        
     }
 
     void OnCollisionEnter2D(Collision2D col)

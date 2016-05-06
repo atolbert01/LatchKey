@@ -21,7 +21,8 @@ public class PlayerCollision : MonoBehaviour {
 			//if (!isBlocking)
 			//playCont.Kill ();
 		} else if (col.gameObject.layer == 11) {  //Rift
-			playCont.NextScene ();
+            //playCont.NextScene ();
+            StartCoroutine(playCont.NextScene());
 		} else if (col.gameObject.layer == 14) {
 			if (!playCont.isRolling) {
 				playCont.Kill ();

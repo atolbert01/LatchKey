@@ -15,7 +15,7 @@ public class PauseMenu : MonoBehaviour
 
     public enum Page
     {
-        None, Main, Options, Credits
+        None, Main, Options, Credits, Controls
     }
 
     private Page currentPage;
@@ -23,6 +23,10 @@ public class PauseMenu : MonoBehaviour
     private int toolbarInt;
 
     private string[] toolbarstrings = { "Audio", "Graphics", "Stats"};
+
+    private string[] controlType = { "Movement", "Shield Block", "Shield Throw", "Roll" };
+
+    private string[] controlInput = { "W A S D or Arrow Keys", "Hold X", "Tap X", "Z while moving" };
 
     private GUIStyle currentStyle;
 
@@ -84,13 +88,14 @@ public class PauseMenu : MonoBehaviour
         if (IsGamePaused())
         {
             InitStyles();
-            GUI.Box(new Rect((Screen.width - 325) / 2, (Screen.height - 325) / 2, 325, 200), "", currentStyle);
+            GUI.Box(new Rect((Screen.width - 325) / 2, (Screen.height - 325) / 2, 325, 250), "", currentStyle);
             GUI.color = statColor;
             switch (currentPage)
             {
                 case Page.Main: MainPauseMenu(); break;
                 case Page.Options: ShowToolbar(); break;
                 case Page.Credits: ShowCredits(); break;
+                case Page.Controls: ShowControls(); break;
             }
         }
     }
@@ -114,6 +119,16 @@ public class PauseMenu : MonoBehaviour
         foreach (string credit in credits)
         {
 			 GUILayout.Label(credit);
+        }
+        EndPage();
+    }
+
+    void ShowControls()
+    {
+        BeginPage(300, 300);
+        for (int i =0; i<controlType.Length; i++)
+        {
+            GUILayout.Label(controlType[i]+": "+controlInput[i]);
         }
         EndPage();
     }
@@ -216,6 +231,10 @@ public class PauseMenu : MonoBehaviour
         if (GUILayout.Button("Credits"))
         {
             currentPage = Page.Credits;
+        }
+        if (GUILayout.Button("Controls"))
+        {
+            currentPage = Page.Controls;
         }
         if (GUILayout.Button("Quit"))
         {
