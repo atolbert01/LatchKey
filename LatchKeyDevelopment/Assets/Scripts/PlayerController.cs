@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 
 	public float moveSpeed;
 
-	private Vector2 startPosition;
+	//private Vector2 startPosition;
 
 	private Vector2 playerMovement;
 
@@ -123,7 +123,7 @@ public class PlayerController : MonoBehaviour
 		// currentDirection == Down. Player will always start facing down.
 		currentDirection = new Vector2 (0, -1);
 
-		startPosition = transform.position;
+		//startPosition = transform.position;
 
 		centerPoint = transform.GetChild (0).gameObject;
 
@@ -463,6 +463,9 @@ public class PlayerController : MonoBehaviour
 
 	void DestroySelf(){
 		Destroy (this.gameObject);
+		if (testRespawn) {
+			return;
+		}
 
 		if (lifeCount > 0)
 			SceneManager.LoadScene (currentScene);

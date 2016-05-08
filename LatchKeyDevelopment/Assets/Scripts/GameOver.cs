@@ -146,7 +146,7 @@ public class GameOver : MonoBehaviour {
             PlayerPrefs.SetInt("num4Player_highscore", playerScore);
             PlayerPrefs.SetString("num4Player", stringToEdit);
         }
-        else
+		else if (playerScore > PlayerPrefs.GetInt("num5Player_highscore"))
         {
             PlayerPrefs.SetInt("num5Player_highscore", playerScore);
             PlayerPrefs.SetString("num5Player", stringToEdit);
