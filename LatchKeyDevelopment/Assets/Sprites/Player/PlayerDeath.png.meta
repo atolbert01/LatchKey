@@ -1,0 +1,873 @@
+fileFormatVersion: 2
+guid: 6b0f9df3c5f60cf4cbce5664e1f3b7f6
+timeCreated: 1462722019
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: PlayerDeath_0
+    21300002: PlayerDeath_1
+    21300004: PlayerDeath_2
+    21300006: PlayerDeath_3
+    21300008: PlayerDeath_4
+    21300010: PlayerDeath_5
+    21300012: PlayerDeath_6
+    21300014: PlayerDeath_7
+    21300016: PlayerDeath_8
+    21300018: PlayerDeath_9
+    21300020: PlayerDeath_10
+    21300022: PlayerDeath_11
+    21300024: PlayerDeath_12
+    21300026: PlayerDeath_13
+    21300028: PlayerDeath_14
+    21300030: PlayerDeath_15
+    21300032: PlayerDeath_16
+    21300034: PlayerDeath_17
+    21300036: PlayerDeath_18
+    21300038: PlayerDeath_19
+    21300040: PlayerDeath_20
+    21300042: PlayerDeath_21
+    21300044: PlayerDeath_22
+    21300046: PlayerDeath_23
+    21300048: PlayerDeath_24
+    21300050: PlayerDeath_25
+    21300052: PlayerDeath_26
+    21300054: PlayerDeath_27
+    21300056: PlayerDeath_28
+    21300058: PlayerDeath_29
+    21300060: PlayerDeath_30
+    21300062: PlayerDeath_31
+    21300064: PlayerDeath_32
+    21300066: PlayerDeath_33
+    21300068: PlayerDeath_34
+    21300070: PlayerDeath_35
+    21300072: PlayerDeath_36
+    21300074: PlayerDeath_37
+    21300076: PlayerDeath_38
+    21300078: PlayerDeath_39
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 16
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: PlayerDeath_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 5}
+        - {x: -5, y: 2}
+        - {x: -5, y: -3}
+        - {x: 0, y: -5}
+        - {x: 3, y: -5}
+        - {x: 5, y: -3}
+        - {x: 5, y: 1}
+        - {x: 3, y: 5}
+    - name: PlayerDeath_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 6}
+        - {x: -6, y: 2}
+        - {x: -6, y: -2}
+        - {x: -4, y: -5}
+        - {x: 0, y: -7}
+        - {x: 3, y: -6}
+        - {x: 6, y: -2}
+        - {x: 6, y: 2}
+        - {x: 4, y: 6}
+    - name: PlayerDeath_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2, y: 9}
+        - {x: -8, y: -1}
+        - {x: -8, y: -3}
+        - {x: -2, y: -8}
+        - {x: 0, y: -10}
+        - {x: 3, y: -9}
+        - {x: 8, y: 0}
+        - {x: 8, y: 1}
+        - {x: 1, y: 10}
+    - name: PlayerDeath_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: -12}
+        - {x: 2, y: -12}
+        - {x: 11, y: -4}
+        - {x: 11, y: 3}
+        - {x: 4, y: 13}
+        - {x: -1, y: 13}
+        - {x: -10, y: 3}
+        - {x: -10, y: -2}
+    - name: PlayerDeath_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 3}
+        - {x: -14, y: -2}
+        - {x: -3, y: -15}
+        - {x: 2, y: -15}
+        - {x: 14, y: -1}
+        - {x: 13, y: 2}
+        - {x: 3, y: 16}
+        - {x: -2, y: 16}
+    - name: PlayerDeath_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: -2}
+        - {x: -3, y: -16}
+        - {x: 3, y: -16}
+        - {x: 15, y: -7}
+        - {x: 15, y: 4}
+        - {x: 9, y: 16}
+        - {x: -3, y: 16}
+        - {x: -15, y: 3}
+    - name: PlayerDeath_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 16}
+        - {x: -16, y: 2}
+        - {x: -16, y: -1}
+        - {x: -15, y: -3}
+        - {x: -3, y: -16}
+        - {x: 3, y: -16}
+        - {x: 16, y: -4}
+        - {x: 16, y: 2}
+        - {x: 5, y: 16}
+    - name: PlayerDeath_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 16}
+        - {x: -2, y: 15}
+        - {x: -14, y: 3}
+        - {x: -14, y: -1}
+        - {x: -3, y: -16}
+        - {x: 2, y: -16}
+        - {x: 11, y: -5}
+        - {x: 13, y: -2}
+        - {x: 13, y: 3}
+        - {x: 2, y: 16}
+    - name: PlayerDeath_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 2}
+        - {x: -11, y: -3}
+        - {x: -3, y: -12}
+        - {x: 2, y: -12}
+        - {x: 10, y: -5}
+        - {x: 10, y: 1}
+        - {x: 8, y: 5}
+        - {x: 2, y: 11}
+        - {x: 0, y: 11}
+        - {x: -8, y: 8}
+    - name: PlayerDeath_9
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1, y: 6}
+        - {x: -6, y: 3}
+        - {x: -6, y: -6}
+        - {x: 0, y: -6}
+        - {x: 4, y: -1}
+        - {x: 4, y: 2}
+        - {x: 2, y: 6}
+    - name: PlayerDeath_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1, y: 5}
+        - {x: -4, y: 2}
+        - {x: -4, y: -3}
+        - {x: 1, y: -5}
+        - {x: 4, y: -5}
+        - {x: 6, y: -3}
+        - {x: 6, y: 1}
+        - {x: 4, y: 5}
+    - name: PlayerDeath_11
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1, y: 6}
+        - {x: -5, y: 2}
+        - {x: -5, y: -2}
+        - {x: -3, y: -5}
+        - {x: 1, y: -7}
+        - {x: 4, y: -6}
+        - {x: 7, y: -2}
+        - {x: 7, y: 2}
+        - {x: 5, y: 6}
+    - name: PlayerDeath_12
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1, y: 9}
+        - {x: -7, y: -1}
+        - {x: -7, y: -3}
+        - {x: -1, y: -8}
+        - {x: 1, y: -10}
+        - {x: 4, y: -9}
+        - {x: 9, y: 0}
+        - {x: 9, y: 1}
+        - {x: 2, y: 10}
+    - name: PlayerDeath_13
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2, y: -12}
+        - {x: 3, y: -12}
+        - {x: 12, y: -4}
+        - {x: 12, y: 3}
+        - {x: 5, y: 13}
+        - {x: 0, y: 13}
+        - {x: -9, y: 3}
+        - {x: -9, y: -2}
+    - name: PlayerDeath_14
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 3}
+        - {x: -13, y: -2}
+        - {x: -2, y: -15}
+        - {x: 3, y: -15}
+        - {x: 15, y: -1}
+        - {x: 14, y: 2}
+        - {x: 4, y: 16}
+        - {x: -1, y: 16}
+    - name: PlayerDeath_15
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2, y: 16}
+        - {x: -14, y: 3}
+        - {x: -14, y: -2}
+        - {x: -2, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+    - name: PlayerDeath_16
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: -2}
+        - {x: -7, y: -16}
+        - {x: 4, y: -16}
+        - {x: 16, y: -8}
+        - {x: 16, y: 7}
+        - {x: 7, y: 16}
+        - {x: -4, y: 16}
+        - {x: -15, y: 2}
+    - name: PlayerDeath_17
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3, y: 16}
+        - {x: 1, y: 16}
+        - {x: -1, y: 15}
+        - {x: -13, y: 3}
+        - {x: -13, y: -1}
+        - {x: -1, y: -16}
+        - {x: 2, y: -16}
+        - {x: 4, y: -15}
+        - {x: 12, y: -5}
+        - {x: 14, y: -2}
+        - {x: 14, y: 3}
+    - name: PlayerDeath_18
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: -4}
+        - {x: -2, y: -12}
+        - {x: 4, y: -12}
+        - {x: 11, y: -6}
+        - {x: 11, y: 2}
+        - {x: 4, y: 11}
+        - {x: -3, y: 11}
+        - {x: -10, y: 2}
+    - name: PlayerDeath_19
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 6}
+        - {x: -5, y: 3}
+        - {x: -5, y: -6}
+        - {x: 1, y: -6}
+        - {x: 5, y: -1}
+        - {x: 5, y: 2}
+        - {x: 3, y: 6}
+    - name: PlayerDeath_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 5}
+        - {x: -5, y: 2}
+        - {x: -5, y: -3}
+        - {x: 0, y: -5}
+        - {x: 3, y: -5}
+        - {x: 5, y: -3}
+        - {x: 5, y: 1}
+        - {x: 3, y: 5}
+    - name: PlayerDeath_21
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 6}
+        - {x: -6, y: 2}
+        - {x: -6, y: -2}
+        - {x: -4, y: -5}
+        - {x: 0, y: -7}
+        - {x: 3, y: -6}
+        - {x: 6, y: -2}
+        - {x: 6, y: 2}
+        - {x: 4, y: 6}
+    - name: PlayerDeath_22
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2, y: 9}
+        - {x: -8, y: -1}
+        - {x: -8, y: -3}
+        - {x: -2, y: -8}
+        - {x: 0, y: -10}
+        - {x: 3, y: -9}
+        - {x: 8, y: 0}
+        - {x: 8, y: 1}
+        - {x: 1, y: 10}
+    - name: PlayerDeath_23
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: -12}
+        - {x: 2, y: -12}
+        - {x: 11, y: -4}
+        - {x: 11, y: 3}
+        - {x: 4, y: 13}
+        - {x: -1, y: 13}
+        - {x: -10, y: 3}
+        - {x: -10, y: -2}
+    - name: PlayerDeath_24
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 3}
+        - {x: -14, y: -2}
+        - {x: -3, y: -15}
+        - {x: 2, y: -15}
+        - {x: 14, y: -1}
+        - {x: 13, y: 2}
+        - {x: 3, y: 16}
+        - {x: -2, y: 16}
+    - name: PlayerDeath_25
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: -2}
+        - {x: -3, y: -16}
+        - {x: 3, y: -16}
+        - {x: 15, y: -7}
+        - {x: 15, y: 4}
+        - {x: 9, y: 16}
+        - {x: -3, y: 16}
+        - {x: -15, y: 3}
+    - name: PlayerDeath_26
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 16}
+        - {x: -16, y: 2}
+        - {x: -16, y: -1}
+        - {x: -15, y: -3}
+        - {x: -3, y: -16}
+        - {x: 3, y: -16}
+        - {x: 16, y: -4}
+        - {x: 16, y: 2}
+        - {x: 5, y: 16}
+    - name: PlayerDeath_27
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 16}
+        - {x: -2, y: 15}
+        - {x: -14, y: 3}
+        - {x: -14, y: -1}
+        - {x: -3, y: -16}
+        - {x: 2, y: -16}
+        - {x: 11, y: -5}
+        - {x: 13, y: -2}
+        - {x: 13, y: 3}
+        - {x: 2, y: 16}
+    - name: PlayerDeath_28
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 2}
+        - {x: -11, y: -3}
+        - {x: -3, y: -12}
+        - {x: 2, y: -12}
+        - {x: 10, y: -5}
+        - {x: 10, y: 1}
+        - {x: 8, y: 5}
+        - {x: 2, y: 11}
+        - {x: 0, y: 11}
+        - {x: -8, y: 8}
+    - name: PlayerDeath_29
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1, y: 6}
+        - {x: -6, y: 3}
+        - {x: -6, y: -6}
+        - {x: 0, y: -6}
+        - {x: 4, y: -1}
+        - {x: 4, y: 2}
+        - {x: 2, y: 6}
+    - name: PlayerDeath_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1, y: 5}
+        - {x: -4, y: 2}
+        - {x: -4, y: -3}
+        - {x: 1, y: -5}
+        - {x: 4, y: -5}
+        - {x: 6, y: -3}
+        - {x: 6, y: 1}
+        - {x: 4, y: 5}
+    - name: PlayerDeath_31
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1, y: 6}
+        - {x: -5, y: 2}
+        - {x: -5, y: -2}
+        - {x: -3, y: -5}
+        - {x: 1, y: -7}
+        - {x: 4, y: -6}
+        - {x: 7, y: -2}
+        - {x: 7, y: 2}
+        - {x: 5, y: 6}
+    - name: PlayerDeath_32
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1, y: 9}
+        - {x: -7, y: -1}
+        - {x: -7, y: -3}
+        - {x: -1, y: -8}
+        - {x: 1, y: -10}
+        - {x: 4, y: -9}
+        - {x: 9, y: 0}
+        - {x: 9, y: 1}
+        - {x: 2, y: 10}
+    - name: PlayerDeath_33
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2, y: -12}
+        - {x: 3, y: -12}
+        - {x: 12, y: -4}
+        - {x: 12, y: 3}
+        - {x: 5, y: 13}
+        - {x: 0, y: 13}
+        - {x: -9, y: 3}
+        - {x: -9, y: -2}
+    - name: PlayerDeath_34
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 3}
+        - {x: -13, y: -2}
+        - {x: -2, y: -15}
+        - {x: 3, y: -15}
+        - {x: 15, y: -1}
+        - {x: 14, y: 2}
+        - {x: 4, y: 16}
+        - {x: -1, y: 16}
+    - name: PlayerDeath_35
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2, y: 16}
+        - {x: -14, y: 3}
+        - {x: -14, y: -2}
+        - {x: -2, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+    - name: PlayerDeath_36
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: -2}
+        - {x: -7, y: -16}
+        - {x: 4, y: -16}
+        - {x: 16, y: -8}
+        - {x: 16, y: 7}
+        - {x: 7, y: 16}
+        - {x: -4, y: 16}
+        - {x: -15, y: 2}
+    - name: PlayerDeath_37
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3, y: 16}
+        - {x: 1, y: 16}
+        - {x: -1, y: 15}
+        - {x: -13, y: 3}
+        - {x: -13, y: -1}
+        - {x: -1, y: -16}
+        - {x: 2, y: -16}
+        - {x: 4, y: -15}
+        - {x: 12, y: -5}
+        - {x: 14, y: -2}
+        - {x: 14, y: 3}
+    - name: PlayerDeath_38
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: -4}
+        - {x: -2, y: -12}
+        - {x: 4, y: -12}
+        - {x: 11, y: -6}
+        - {x: 11, y: 2}
+        - {x: 4, y: 11}
+        - {x: -3, y: 11}
+        - {x: -10, y: 2}
+    - name: PlayerDeath_39
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 6}
+        - {x: -5, y: 3}
+        - {x: -5, y: -6}
+        - {x: 1, y: -6}
+        - {x: 5, y: -1}
+        - {x: 5, y: 2}
+        - {x: 3, y: 6}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
