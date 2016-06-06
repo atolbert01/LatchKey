@@ -5,32 +5,48 @@ CREDITS:
 
 Aaron Tolbert-Smith
 
+
 ●	Original Concept
+
 ●	Director
+
 ●	Design
+
 ●	Music/Sound Design
+
 ●	Animation
 
 Leo Wack
 
+
 ●	Level Design
+
 ●	Programming
+
 ●	AI Programming
+
 
 Ryan Bonisch
 
+
 ●	Programming
+
 ●	UI Programming
 
 Joshua Agnes
 
+
 ●	Test Programming
+
 ●	Documentation
+
 ●	Playtesting
 
 Paul Ross
 
+
 ●	Sound Programming
+
 ●	Playtesting
 
 DESCRIPTION:
