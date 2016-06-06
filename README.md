@@ -4,6 +4,7 @@ Contains the Unity Project file for Latch Key Quest -- a 2D dungeon crawl game.
 CREDITS:
 
 Aaron Tolbert-Smith
+
 ●	Original Concept
 ●	Director
 ●	Design
@@ -11,20 +12,24 @@ Aaron Tolbert-Smith
 ●	Animation
 
 Leo Wack
+
 ●	Level Design
 ●	Programming
 ●	AI Programming
 
 Ryan Bonisch
+
 ●	Programming
 ●	UI Programming
 
 Joshua Agnes
+
 ●	Test Programming
 ●	Documentation
 ●	Playtesting
 
 Paul Ross
+
 ●	Sound Programming
 ●	Playtesting
 
