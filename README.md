@@ -4,35 +4,31 @@ Contains the Unity Project file for Latch Key Quest -- a 2D dungeon crawl game.
 CREDITS:
 
 ●	Aaron Tolbert-Smith
-Original Concept
-Director
-Design
-Music/Sound Design
-Animation
+
+Original Concept, Director, Design, Music/Sound Design, Animation
 
 ●	Leo Wack
-Level Design
-Programming
-AI Programming
+
+Level Design, Programming, AI Programming
 
 ●	Ryan Bonisch
-Programming
-UI Programming
+
+Programming, UI Programming
 
 ●	Joshua Agnes
-Test Programming
-Documentation
-Playtesting
+
+Test Programming, Documentation, Playtesting
 
 ●	Paul Ross
-Sound Programming
-Playtesting
+
+Sound Programming, Playtesting
 
 DESCRIPTION:
 
 Latch Key Quest is a single-player, top-down, action game in which the player completes a series of linear challenge rooms before fighting the final boss and exiting the dungeon. The player can walk in eight directions, roll to avoid projectiles/traps, block, and attack. Unlike traditional hack and slash games, the player does not have a sword or melee weapon, but instead finds a magic shield in the dungeon. Using the shield the player can block (by holding the shield button) or throw the shield as an attack (by releasing the shield button). Once the shield has been thrown it will ricochet off of walls and enemies until the player presses the shield button once again recalling it back to the player as would a boomerang to the player's hand. The shield ricochet is highly predictable and can be used to string together hits or to solve puzzles. While the shield is deployed the player cannot block and must be careful to avoid taking any damage as there is no energy meter and a single hit means instant death. When the player dies the current room must be restarted.
 
 Each room may contain:
+
 ●	Hazards - Objects which kill the player. Unlike enemies, traps cannot be destroyed by the player. Spikes, pits, saws, etc. are examples of Hazards.
 
 ●	Enemies - Objects which have offensive behaviors and can kill the player. Enemies can be destroyed by the player.
@@ -42,6 +38,7 @@ Each room may contain:
 ●	An Exit - The door to the next room which can be opened when the player has activated all switches..
 
 The game is over when:
+
 ●	The player runs out of lives.
 
 ●	The final room is completed.
