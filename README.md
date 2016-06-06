@@ -3,51 +3,30 @@ Contains the Unity Project file for Latch Key Quest -- a 2D dungeon crawl game.
 
 CREDITS:
 
-Aaron Tolbert-Smith
+●	Aaron Tolbert-Smith
+Original Concept
+Director
+Design
+Music/Sound Design
+Animation
 
+●	Leo Wack
+Level Design
+Programming
+AI Programming
 
-●	Original Concept
+●	Ryan Bonisch
+Programming
+UI Programming
 
-●	Director
+●	Joshua Agnes
+Test Programming
+Documentation
+Playtesting
 
-●	Design
-
-●	Music/Sound Design
-
-●	Animation
-
-Leo Wack
-
-
-●	Level Design
-
-●	Programming
-
-●	AI Programming
-
-
-Ryan Bonisch
-
-
-●	Programming
-
-●	UI Programming
-
-Joshua Agnes
-
-
-●	Test Programming
-
-●	Documentation
-
-●	Playtesting
-
-Paul Ross
-
-
-●	Sound Programming
-
-●	Playtesting
+●	Paul Ross
+Sound Programming
+Playtesting
 
 DESCRIPTION:
 
@@ -55,12 +34,16 @@ Latch Key Quest is a single-player, top-down, action game in which the player co
 
 Each room may contain:
 ●	Hazards - Objects which kill the player. Unlike enemies, traps cannot be destroyed by the player. Spikes, pits, saws, etc. are examples of Hazards.
+
 ●	Enemies - Objects which have offensive behaviors and can kill the player. Enemies can be destroyed by the player.
+
 ●	Switches - The player must activate the switch in order to exit the room.
+
 ●	An Exit - The door to the next room which can be opened when the player has activated all switches..
 
 The game is over when:
 ●	The player runs out of lives.
+
 ●	The final room is completed.
 
 
